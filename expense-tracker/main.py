@@ -1,6 +1,3 @@
-
-
-
 def view_expenses():
     if not expenses:
         print("No Expenses!")
@@ -18,17 +15,39 @@ def add_expenses():
 
 def search_expense():
     search_an_expense = input("Enter the expense you want to search: ")
-    for view_exp in expenses:
-       if view_exp.items() == search_an_expense:
-           print("here")
+    for search_exp in expenses:
+        if search_an_expense in search_exp:
 
+            return f"{search_an_expense} ${search_exp[search_an_expense]} in expenses"
+    else:
+        return f"{search_an_expense} NOT HERE"
 
+def remove_expense():
+    if not expenses:
+        print("No Expenses to Remove!")
+    else:
+        remove_item = input("Enter the expense you wanna remove: ")
+        for remove_exp in expenses:
+            if remove_item in remove_exp:
+                 expenses.remove(remove_exp)
+                 print(f"{remove_item} has been removed from Expenses!")
+                 return
 
+        else:
+            print(f"{remove_item}, Doesn't Exist")
 
+def total_spent():
+    if not expenses:
+        print("No Expenses Spend!")
+    else:
+        total_amount = 0
+        for spend in expenses:
+            spend_amount = (list(spend.values())[0])
+            total_amount += spend_amount
+        print(F"Your total spend Amount is: ${total_amount}")
 
 expenses = [
-    {"Food": 20},
-    {"Uber": 15}
+
 ]
 
 while True:
@@ -40,14 +59,13 @@ while True:
     elif user_option == "2":
         add_expenses()
     elif user_option == "3":
-        search_expense()
+        print(search_expense())
     elif user_option == "4":
-        print("Remove Expense")
+         remove_expense()
     elif user_option == "5":
-        print("View Total Spent")
+        total_spent()
     elif user_option == "6":
         break
 
     else:
         print("Invalid Input!")
-
