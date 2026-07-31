@@ -8,25 +8,35 @@ def view_expenses():
                 print(f"{name}: ${cost}")
 
 def add_expenses():
-        expense_name = input("Enter expense name: ")
-        expense_amount = int(input("Enter expense amount: "))
-        expenses.append({expense_name:expense_amount})
-        print(f"{expense_name} Successfully Added With ${expense_amount}")
+        expense_name = input("Enter expense name: ").lower()
+        if expense_name.replace(" ", "").isalpha():
+            expense_amount = int(input("Enter expense amount: "))  # TODO TRY AND CATCH HERE
+            if expense_amount > 0:
+                expenses.append({expense_name: expense_amount})
+                print(f"{expense_name} Successfully Added With ${expense_amount}")
+            else:
+                print("Invalid Amount Entered!")
+        else:
+            print("Invalid input. Please do not use numbers or symbols.")
+
 
 def search_expense():
-    search_an_expense = input("Enter the expense you want to search: ")
-    for search_exp in expenses:
-        if search_an_expense in search_exp:
-
-            return f"{search_an_expense} ${search_exp[search_an_expense]} in expenses"
+    if not expenses:
+        print("No Expenses to Search")
     else:
-        return f"{search_an_expense} NOT HERE"
+        search_an_expense = input("Enter the expense you want to search: ").lower()
+        for search_exp in expenses:
+            if search_an_expense in search_exp:
+                return f"{search_an_expense} ${search_exp[search_an_expense]} in expenses"
+        else:
+            return f"{search_an_expense} NOT HERE"
+
 
 def remove_expense():
     if not expenses:
         print("No Expenses to Remove!")
     else:
-        remove_item = input("Enter the expense you wanna remove: ")
+        remove_item = input("Enter the expense you wanna remove: ").lower()
         for remove_exp in expenses:
             if remove_item in remove_exp:
                  expenses.remove(remove_exp)
@@ -59,7 +69,7 @@ while True:
     elif user_option == "2":
         add_expenses()
     elif user_option == "3":
-        print(search_expense())
+        search_expense()
     elif user_option == "4":
          remove_expense()
     elif user_option == "5":
