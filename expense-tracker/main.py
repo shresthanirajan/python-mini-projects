@@ -8,14 +8,20 @@ def view_expenses():
                 print(f"{name}: ${cost}")
 
 def add_expenses():
-        expense_name = input("Enter expense name: ").lower()
+        expense_name = input("Enter expense name: ").strip().lower()
         if expense_name.replace(" ", "").isalpha():
-            expense_amount = int(input("Enter expense amount: "))  # TODO TRY AND CATCH HERE
-            if expense_amount > 0:
-                expenses.append({expense_name: expense_amount})
-                print(f"{expense_name} Successfully Added With ${expense_amount}")
-            else:
-                print("Invalid Amount Entered!")
+            try:
+                expense_amount = int(input("Enter expense amount: "))
+                if expense_amount > 0:
+                    expenses.append({expense_name: expense_amount})
+                    print(f"{expense_name} Successfully Added With ${expense_amount}")
+                else:
+                    print("Invalid Amount Entered!")
+            except ValueError:
+                print("Please only enter Numeric Values!")
+
+
+
         else:
             print("Invalid input. Please do not use numbers or symbols.")
 
@@ -23,20 +29,22 @@ def add_expenses():
 def search_expense():
     if not expenses:
         print("No Expenses to Search")
+        return
     else:
-        search_an_expense = input("Enter the expense you want to search: ").lower()
+        search_an_expense = input("Enter the expense you want to search: ").strip().lower()
         for search_exp in expenses:
             if search_an_expense in search_exp:
-                return f"{search_an_expense} ${search_exp[search_an_expense]} in expenses"
+                print(f"{search_an_expense} ${search_exp[search_an_expense]} in expenses")
+                return
         else:
-            return f"{search_an_expense} NOT HERE"
+            print(f"{search_an_expense} NOT HERE")
 
 
 def remove_expense():
     if not expenses:
         print("No Expenses to Remove!")
     else:
-        remove_item = input("Enter the expense you wanna remove: ").lower()
+        remove_item = input("Enter the expense you wanna remove: ").strip().lower()
         for remove_exp in expenses:
             if remove_item in remove_exp:
                  expenses.remove(remove_exp)
@@ -54,7 +62,7 @@ def total_spent():
         for spend in expenses:
             spend_amount = (list(spend.values())[0])
             total_amount += spend_amount
-        print(F"Your total spend Amount is: ${total_amount}")
+        print(f"Your total spend Amount is: ${total_amount}")
 
 expenses = [
 
