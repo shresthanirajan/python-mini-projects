@@ -1,5 +1,3 @@
-
-
 def view_movie():
     if not movies_list:
         print("Movie List Empty, Please add Movies")
@@ -10,12 +8,8 @@ def view_movie():
                     print(f"Movie: {movie_name}, Rating: {movie_rating}")
 
 
-
-
 def add_movie():
     movie_name = input("What movie do you wanna add: ").strip().lower()
-
-
     try:
         if not movie_name:
             print("INVALID, Please Enter Movie Name!")
@@ -36,7 +30,6 @@ def add_movie():
         print("INVALID! Please only Enter Numeric Values Please")
 
 
-
 def search_movie():
     if not movies_list:
         print("No Movies to Search")
@@ -44,7 +37,7 @@ def search_movie():
         movie_search = input("Enter movie name you wanna Search: ").strip().lower()
         for movie in movies_list:
             if movie_search in movie:
-                print(f"Movie is: {movie_search}")
+                print(f"Movie found: {movie_search}")
                 break
         else:
             print(f"{movie_search} Doesn't exist")
@@ -99,14 +92,10 @@ def view_watched_list():
                         print(f"Movie: {movie_watch} | Rating: {rating}")
                 found_watched = True
 
-
-
         if not found_watched:
             print("No Watched Movies! Please Add movies to Watched List")
 
-movies_list = [
-
-]
+movies_list = []
 
 while True:
     user_input = input( "1. View Movies\n2. Add movie\n3. Search Movie\n4. Mark Movie as Watched\n5. Remove movie\n6. View Watched Movie\n7.Exit\nChoose an Option: ")
@@ -125,7 +114,6 @@ while True:
     elif user_input == "7":
         print("Exit")
         break
-
     else:
         print("Invalid Input")
 
