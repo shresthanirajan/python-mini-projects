@@ -6,34 +6,54 @@ def view_movie():
     else:
         for movie in movies_list:
             for movie_name, movie_rating in movie.items():
-                print(f"Movie: {movie_name}, Rating: {movie_rating}")
+                if movie_name != "watched":
+                    print(f"Movie: {movie_name}, Rating: {movie_rating}")
+
+
 
 
 def add_movie():
-    movie_name = input("What movie do you wanna add: ").lower()
-    movie_rating = int(input("Movie Rating: "))
+    movie_name = input("What movie do you wanna add: ").strip().lower()
 
-    movies_list.append({movie_name:movie_rating, "watched": False})
-    print(f"{movie_name} Successfully Added with rating: {movie_rating}")
+
+    try:
+        if not movie_name:
+            print("INVALID, Please Enter Movie Name!")
+            return
+
+        for movie in movies_list:
+            if movie_name in movie:
+                print("Movie Already in Movie List!")
+                return
+
+        movie_rating = int(input("Movie Rating: ").strip())
+        if 10 >= movie_rating >= 0:
+            movies_list.append({movie_name: movie_rating, "watched": False})
+            print(f"{movie_name} Successfully Added with rating: {movie_rating}")
+        else:
+            print("INVALID! Number between 0-10 Only Please")
+    except ValueError:
+        print("INVALID! Please only Enter Numeric Values Please")
+
 
 
 def search_movie():
     if not movies_list:
         print("No Movies to Search")
     else:
-        movie_search = input("Enter movie name you wanna Search: ").lower()
+        movie_search = input("Enter movie name you wanna Search: ").strip().lower()
         for movie in movies_list:
             if movie_search in movie:
                 print(f"Movie is: {movie_search}")
                 break
-            else:
-                print(f"{movie_search} Doesn't exist")
+        else:
+            print(f"{movie_search} Doesn't exist")
 
 def mark_watched():
     if not movies_list:
         print("You haven't watched any Movies Please Add a Movie!")
     else:
-        movie_watched = input("Name a movie you have watched: ").lower()
+        movie_watched = input("Name a movie you have watched: ").strip().lower()
 
         for watch_movie in movies_list:
 
@@ -55,14 +75,14 @@ def remove_movie():
     if not movies_list:
         print("No Movies to remove!")
     else:
-        remove_name = input("Enter the movie you wanna remove: ").lower()
+        remove_name = input("Enter the movie you wanna remove: ").strip().lower()
         for movie_remove in movies_list:
             if remove_name in movie_remove:
                 movies_list.remove(movie_remove)
                 print(f"{remove_name} Successfully Removed!")
                 break
-            else:
-                print(f"{remove_name} Doesn't Exist. couldn't remove")
+        else:
+            print(f"{remove_name} Doesn't Exist. couldn't remove")
 
 
 def view_watched_list():
@@ -78,10 +98,10 @@ def view_watched_list():
                     if movie_watch != "watched":
                         print(f"Movie: {movie_watch} | Rating: {rating}")
                 found_watched = True
-                #TODO FIX ISSUES HERE !
 
 
-        if found_watched == False:
+
+        if not found_watched:
             print("No Watched Movies! Please Add movies to Watched List")
 
 movies_list = [
