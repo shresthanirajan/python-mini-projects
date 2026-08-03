@@ -17,3 +17,19 @@ for product in products:
 print(new_product)
 
 
+students = [
+    {"name": "Jack", "score": 80},
+    {"name": "Sarah", "score": 95},
+    {"name": "Mike", "score": 70}
+]
+
+def get_top_score(student_list):
+    top_student = student_list[0]
+
+    for student in student_list:
+        if student["score"] > top_student["score"]:
+            top_student = student
+
+    return top_student
+
+print(get_top_score(students))
