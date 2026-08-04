@@ -57,3 +57,33 @@ print(se2 == se3)
 SoftwareEngineer.entry_salary(24)
 
 
+
+class Movie:
+    def __init__(self, title, rating):
+        self.title = title
+        self.rating = rating
+
+    def show_info(self):
+        print(f"{self.title} has a rating of {self.rating}")
+
+    def is_high_rated(self):
+        if self.rating >= 8:
+            print(f"{self.title} is a High-Rated-Movie")
+        else:
+            print(f"{self.title} Average-Rated-Movie")
+
+    def update_rating(self, new_rating):
+        self.rating = new_rating
+
+movie1 = Movie("Avatar", 8)
+movie2 = Movie("Dune", 9)
+
+movie1.show_info()
+movie2.show_info()
+
+movie1.is_high_rated()
+movie2.is_high_rated()
+
+movie2.update_rating(10)
+
+
