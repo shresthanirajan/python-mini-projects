@@ -1,35 +1,59 @@
-#TODO pratice
+#position, name, age, level salary
 
-products = [
-    {"name": "Laptop", "price": 800},
-    {"name": "Mouse", "price": 25},
-    {"name": "Keyboard", "price": 70}
-]
-
-new_product = []
-
-for product in products:
-    product_var = product["price"]
-
-    if product_var < 100:
-        new_product.append(product["name"])
-
-print(new_product)
+se1 = ["Software Engineer", "Max", 20, "Junior", 5000]
+se2 = ["Software Engineer", "Lisa", 20, "Senior", 7000]
+d1 = ["Designer", "Phillipp"]
 
 
-students = [
-    {"name": "Jack", "score": 80},
-    {"name": "Sarah", "score": 95},
-    {"name": "Mike", "score": 70}
-]
+#class
+class SoftwareEngineer:
 
-def get_top_score(student_list):
-    top_student = student_list[0]
 
-    for student in student_list:
-        if student["score"] > top_student["score"]:
-            top_student = student
+    #Class attribute
+    alias = "Keyboard Magician"
 
-    return top_student
+    def __init__(self, name, age, level, salary):
+        #Instance Attributes
+        self.name = name
+        self.age = age
+        self.level = level
+        self.salary = salary
 
-print(get_top_score(students))
+    #Instance method
+    def code(self):
+        print(f"{self.name} is writing code...")
+
+    def code_in_language(self, language):
+        print(f"{self.name} is writing code...{language}")
+
+    #dunder method
+    def __str__(self):
+        information = f"name = {self.name}, age = {self.age}, level = {self.level}"
+        return information
+
+    def __eq__(self, other):
+        return self.name == other.name and self.age == other.age
+
+    def  entry_salary(age):
+        if age < 25:
+            return 5000
+        if age < 30:
+            return 7000
+        return 9000
+
+
+#Instance
+se1 = SoftwareEngineer("Max", 20, "Junior", 5000)
+se2 = SoftwareEngineer( "Lisa", 20, "Senior", 7000)
+se3 = SoftwareEngineer( "Lisa", 27, "Senior", 7000)
+
+se1.code()
+se2.code()
+se1.code_in_language("Python")
+se2.code_in_language("C++")
+
+print(se2 == se3)
+
+SoftwareEngineer.entry_salary(24)
+
+
