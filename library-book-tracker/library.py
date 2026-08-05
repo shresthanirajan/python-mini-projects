@@ -31,7 +31,14 @@ class Library:
         self.books = []
 
     def add_books(self,book):
-        self.books.append(book)
+        for same_book in self.books:
+            if book.title.lower() ==  same_book.title.lower():
+                print("You can't add the same book twice.")
+                return
+        else:
+            self.books.append(book)
+            print(f"{book.title}, Successfully Added!")
+
 
     def show_books(self):
         if not self.books:
@@ -41,13 +48,23 @@ class Library:
                 each_book.show_info()
 
     def search_book(self, title):
+
         for book_name in self.books:
-            if title == book_name.title:
-                print("Here")
+            if title.lower() == book_name.title.lower():
+                book_name.show_info()
+
                 return
         else:
-            print("not here")
+            print(f"{title} was not found in the library.")
 
+    def remove_book(self, remove_name):
+        for remove_book in self.books:
+            if remove_name.lower() == remove_book.title.lower():
+                self.books.remove(remove_book)
+                print(f"{remove_name} successfully removed!")
+                return
+        else:
+            print(f"{remove_name} Not Found, couldn't remove!")
 
 book1 = Book("Atomic Habits", "James Clear")
 book2 = Book("The Alchemist", "Paulo Coelho")
@@ -55,6 +72,12 @@ book2 = Book("The Alchemist", "Paulo Coelho")
 library1 = Library()
 
 library1.add_books(book1)
-library1.add_books(book2)
+library1.add_books(book1)
 
-library1.search_book("Atomic Habits")
+library1.remove_book("Atomic Habits")
+
+
+
+
+
+
