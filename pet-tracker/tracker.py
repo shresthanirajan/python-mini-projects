@@ -86,11 +86,54 @@ class Pets:
             print(f"{self.name} is doing Good!")
 
 
+class PetOwner:
+    def __init__(self, name):
+        self.name = name
+        self.pets = []
 
+    def add_pet(self, pet):
+        print(f"{pet.name} has been Added.")
+        self.pets.append(pet)
+
+
+
+    def show_pets(self):
+        if not self.pets:
+            print("You have no Pets!")
+        else:
+            for pets in self.pets:
+                pets.show_info()
+
+    def remove_pet(self, pet):
+        if not self.pets:
+            print("No pets to Remove!")
+        else:
+            for pet_remove in self.pets:
+                if pet.lower() == pet_remove.name.lower():
+                    self.pets.remove(pet_remove)
+                    print(f"{pet_remove.name} Successfully Removed!")
+                    return
+            else:
+                print(f"Couldn't Find {pet} to remove!")
+
+
+    def find_pet(self, pet):
+        if not self.pets:
+            print("No Pets to Find!")
+        else:
+            for pet_find in self.pets:
+                if pet.lower() == pet_find.name.lower():
+                    print(f"{pet_find.name} HAS BEEN FOUND!")
+                    return
+            else:
+                print(f"Couldn't Find {pet}!")
+
+
+owner = PetOwner("Nirajan")
 
 pet1 = Pets("Max", "Dog", 2)
 pet2 = Pets("Luna", "Cat", 3)
 
 
-
-
+owner.add_pet(pet1)
+owner.find_pet("maxx")
