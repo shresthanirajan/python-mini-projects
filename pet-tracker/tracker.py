@@ -61,10 +61,18 @@ class Pets:
             print(f"{self.name} is playing.")
             print(f"{self.name} Currently has {self.energy} Energy Left.")
 
-
+    def sleep(self):
+        if self.energy >= 5:
+            print(f"{self.name} has to much energy, cannot sleep!")
+        else:
+            self.energy += 2
+            if self.energy > 5:
+                self.energy = 5
 
 
 
 pet1 = Pets("Max", "Dog", 2)
 pet2 = Pets("Luna", "Cat", 3)
+
+
 
