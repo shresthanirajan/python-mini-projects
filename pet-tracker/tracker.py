@@ -91,9 +91,17 @@ class PetOwner:
         self.name = name
         self.pets = []
 
+
+
     def add_pet(self, pet):
-        print(f"{pet.name} has been Added.")
-        self.pets.append(pet)
+        for existing_pet in self.pets:
+            if pet.name.lower() == existing_pet.name.lower():
+                print(f"{pet.name} is Already Added, Cannot be added Again!")
+                return False
+        else:
+            print(f"{pet.name} has been Added.")
+            self.pets.append(pet)
+            return True
 
 
 
@@ -129,11 +137,34 @@ class PetOwner:
                 print(f"Couldn't Find {pet}!")
 
 
+    def transfer_pet(self,pet_name,other_owner):
+        if not self.pets:
+            print(f"Cannot Transfer, Please Add Pets First!")
+            return
+        if self == other_owner:
+            print(f"Cannot transfer pet to the same owner.")
+            return
+        else:
+            for pet in self.pets:
+                if pet_name.lower() == pet.name.lower():
+                    added = other_owner.add_pet(pet)
+                    if added:
+                        self.remove_pet(pet_name)
+                        print(f"{pet.name} Transferred to {other_owner.name} Successfully!")
+                        return
+
+            else:
+                print(f"Please add {pet_name} as your pet before transferring.")
+
+
 owner = PetOwner("Nirajan")
+owner1 = PetOwner("Aaryan")
 
 pet1 = Pets("Max", "Dog", 2)
 pet2 = Pets("Luna", "Cat", 3)
 
 
 owner.add_pet(pet1)
-owner.find_pet("maxx")
+owner.transfer_pet("Max", owner1)
+owner.transfer_pet("Max", owner1)
+owner.transfer_pet("Max", owner1)
