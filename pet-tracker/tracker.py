@@ -3,8 +3,8 @@ class Pets:
         self.name = name
         self.animal_type = animal_type
         self.age = age
-        self.energy = 1
-        self.hunger = 0
+        self.energy = 2
+        self.hunger = 3
 
     def show_info(self):
         print(f"Animal is {self.animal_type}, Name is {self.name} and is {self.age} years old.")
@@ -66,13 +66,31 @@ class Pets:
             print(f"{self.name} has to much energy, cannot sleep!")
         else:
             self.energy += 2
+            print(f"{self.name} is currently Sleeping.")
+            print(f"{self.name} Currently has {self.energy} Energy Left.")
             if self.energy > 5:
                 self.energy = 5
+
+    def status(self):
+
+        if 0 >= self.energy and self.hunger >= 4:
+            print(f"{self.name} is VERY TIRED!! And Very Hungry!!")
+
+        elif (1 >= self.energy) and (2<= self.hunger <= 3):
+            print(f"{self.name} has Low energy! AND Very hungry!")
+
+        elif self.energy >= 2 and self.hunger <= 1:
+            print(f"{self.name} has enough energy AND is not hungry")
+
+        else:
+            print(f"{self.name} is doing Good!")
+
 
 
 
 pet1 = Pets("Max", "Dog", 2)
 pet2 = Pets("Luna", "Cat", 3)
+
 
 
 
