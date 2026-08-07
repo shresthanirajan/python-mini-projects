@@ -3,9 +3,13 @@ class Pets:
         self.name = name
         self.animal_type = animal_type
         self.age = age
+        self.energy = 1
+        self.hunger = 0
 
     def show_info(self):
-        print(f"Your Animal is a {self.animal_type}, Name is {self.name} and is {self.age} years old.")
+        print(f"Animal is {self.animal_type}, Name is {self.name} and is {self.age} years old.")
+        print(f"{self.name} Currently has {self.energy} energy Left.")
+        print(f"{self.name} current hunger level: {self.hunger}")
 
     def birthday(self):
         self.age += 1
@@ -20,12 +24,47 @@ class Pets:
         print(f"{self.animal_type} has been changed to {change_animal}")
         self.animal_type = change_animal
 
+    def is_older_than(self, other_pet):
+        if self.age > other_pet.age:
+            print(f"{self.name} is older.")
+
+        elif other_pet.age > self.age:
+            print(f"{other_pet.name} is older then {self.name}")
+        else:
+            print(f"{self.name} and {other_pet.name} Have the same Age ")
 
 
-pet1 = Pets("Max", "Dog", 4)
-pet2 = Pets("Luna", "Cat", 2)
+    def feed(self, food_name):
+        if self.hunger <= 0:
+            print(f"{self.name} is Full of Food, can't feed")
+            return
+        print(f"{self.name} ate {food_name}.")
+        self.hunger -= 1
+
+        if self.energy >= 5:
+            print(f"Maximum Energy Reached")
+        else:
+
+            self.energy += 1
+            print(f"{self.name} Energy Increased By 1")
+            print(f"{self.name} Currently has {self.energy} energy Left.")
+        print(f"{self.name} current hunger level: {self.hunger}")
 
 
-pet1.change_animal_type("Cat")
-pet1.show_info()
+    def play(self):
+
+        if self.energy <= 0:
+            print(f"{self.name} Has no energy to play")
+        else:
+            self.hunger += 1
+            self.energy -= 1
+            print(f"{self.name} is playing.")
+            print(f"{self.name} Currently has {self.energy} Energy Left.")
+
+
+
+
+
+pet1 = Pets("Max", "Dog", 2)
+pet2 = Pets("Luna", "Cat", 3)
 
