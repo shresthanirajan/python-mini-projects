@@ -18,3 +18,4 @@ class Model:
         else:
             self.status = "Trained"
             print(f"{self.name} has been successfully Trained!")
+            print("Check")
