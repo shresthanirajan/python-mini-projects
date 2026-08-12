@@ -1,54 +1,28 @@
 class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner
-        self.balance = balance
-
-    def show_balance(self):
-        print(f"{self.owner} has ${self.balance}")
+        self.__balance = balance
 
     def deposit(self, amount):
         if amount > 0:
-            self.balance += amount
-            print(f"${amount} deposited successfully into {self.owner}'s account!")
-            print(f"Remaining balance: ${self.balance}")
+            self.__balance += amount
+            print(f"${amount} successfully deposited from {self.owner} Account.")
         else:
-            print("invalid amount")
-
+            print("Invalid Deposit amount!")
 
     def withdraw(self, amount):
-        if amount > 0:
-            if self.balance >= amount:
-                self.balance -= amount
-                print(f"${amount} was withdrawn from {self.owner}'s account!")
-                print(f"Remaining balance: ${self.balance}")
+        if self.__balance >= amount:
+            if amount > 0:
+                self.__balance -= amount
+                print(f"${amount} successfully withdraw from {self.owner} Account.")
             else:
-                print("Not enough Money to Withdraw")
+                print("Please enter Valid Number!")
+
         else:
-            print("Invalid Amount")
+            print("Not enough funds")
 
-    def transfer(self, other_account, transfer_amount):
-        if self == other_account:
-            print("You cannot transfer money to the same account")
-            return
-        if transfer_amount > 0:
-            if self.balance >= transfer_amount:
-                self.balance -= transfer_amount
-                other_account.balance += transfer_amount
-                print(
-                    f"${transfer_amount} has been transferred from {self.owner} to {other_account.owner} Account!")
+    def show_balance(self):
+        print(f"{self.owner} your current balance: ${self.__balance}")
 
-                print(f"{self.owner}'s balance: ${self.balance}")
-                print(f"{other_account.owner}'s balance: ${other_account.balance}")
-            else:
-                print("Not Enough Balance to transfer")
-        else:
-            print("Invalid Input")
-
-
-
-
-
-
-
-
+timmy = BankAccount("Timmy", 5000)
 
