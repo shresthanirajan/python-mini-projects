@@ -24,5 +24,9 @@ class BankAccount:
     def show_balance(self):
         print(f"{self.owner} your current balance: ${self.__balance}")
 
-timmy = BankAccount("Timmy", 5000)
+    @property
+    def balance(self):
+        return self.__balance
 
+timmy = BankAccount("Timmy", 5000)
+print(timmy.balance)
