@@ -33,10 +33,22 @@ class Warrior(Character):
     def attack(self):
         print(f"Warrior: {self.name} Strength: {self.strength} attacking with a sword")
 
+class Mage(Character):
+    def __init__(self, name, health, level, mana):
+        super().__init__(name, health, level)
+        self.mana = mana
+
+    def attack(self):
+        print(f"{self.name} attacks with magic using {self.mana} mana")
+
+
 
 warrior = Warrior("Sigma", 100, 12, 50)
 warrior.take_damage(99)
-print(warrior.health)
+
+mage = Mage("Mythical", 100, 30, 75)
+mage.attack()
+
 
 
 
