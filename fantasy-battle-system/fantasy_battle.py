@@ -24,6 +24,8 @@ class Character(ABC):
         else:
             print("damage must be greater than 0")
 
+    def show_info(self):
+        print(f"name: {self.name}, Level: {self.level}, Health: {self.__health}")
 
 class Warrior(Character):
     def __init__(self, name, health, level, strength):
@@ -41,14 +43,25 @@ class Mage(Character):
     def attack(self):
         print(f"{self.name} attacks with magic using {self.mana} mana")
 
+class Archer(Character):
+    def __init__(self, name, health, level):
+        super().__init__(name, health, level)
+        self.arrow = "arrow"
 
+    def attack(self):
+        print(f"{self.name} attacks with an arrow")
 
 warrior = Warrior("Sigma", 100, 12, 50)
-warrior.take_damage(99)
+
 
 mage = Mage("Mythical", 100, 30, 75)
-mage.attack()
+
+queen = Archer("Queen", 85, 75)
 
 
 
+characters = [warrior, mage, queen]
+
+for character in characters:
+    character.attack()
 
