@@ -64,4 +64,6 @@ characters = [warrior, mage, queen]
 
 for character in characters:
     character.attack()
-
+queen.attack()
+mage.attack()
+warrior.attack()
