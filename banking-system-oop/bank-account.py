@@ -28,5 +28,16 @@ class BankAccount:
     def balance(self):
         return self.__balance
 
+    @balance.setter
+    def balance(self,value):
+        if value >= 0:
+            self.__balance = value
+        else:
+            print("Error")
+
 timmy = BankAccount("Timmy", 5000)
+timmy.balance = -500
 print(timmy.balance)
+timmy.show_balance()
+
+

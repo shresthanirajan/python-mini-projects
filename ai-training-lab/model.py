@@ -4,6 +4,7 @@ class Model:
         self.model_type = model_type
         self.version = version
         self.status = "Not Trained"
+        self.trained_on = None
 
     def train(self, other_dataset):
 
@@ -11,6 +12,7 @@ class Model:
             print("Is Loaded")
         else:
             print("Not Loaded")
+            return
 
         if self.status == "Trained":
             print(f"{self.name} is already Trained!")
@@ -18,4 +20,4 @@ class Model:
         else:
             self.status = "Trained"
             print(f"{self.name} has been successfully Trained!")
-            print("Check")
+            self.trained_on = other_dataset
