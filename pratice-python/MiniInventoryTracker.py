@@ -10,8 +10,15 @@ def find_product(product_name):
     else:
         return None
 
+def update_stock(product_name, amount):
+    if product_name in inventory:
+        if amount > 0:
+            inventory[product_name]["stock"] += amount
 
-
+        else:
+            print("Please enter a valid amount number.")
+    else:
+        print("Product doesn't exists")
 for product, info in inventory.items():
     print(f"{product} - Price: {info['price']} - Stock: {info['stock']}")
 
@@ -23,3 +30,5 @@ else:
     print(f"Price: {product['price']}\nStock: {product['stock']}")
 
 
+update_stock("apple", 10)
+print(inventory["apple"])
