@@ -6,7 +6,7 @@ inventory = {
 
 def find_product(product_name):
     if product_name in inventory:
-        return 
+        return
 
 for product, info in inventory.items():
     print(f"{product} - Price: {info['price']} - Stock: {info['stock']}")
