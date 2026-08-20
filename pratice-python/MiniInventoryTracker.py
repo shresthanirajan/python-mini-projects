@@ -1,4 +1,4 @@
-#Current Inverntory
+#Current inventory
 inventory = {
     "apple": {"price": 1.50, "stock": 10},
     "banana": {"price": 0.75, "stock": 20},
@@ -21,20 +21,26 @@ def update_stock(product_name, amount):
             print("Please enter a valid amount number.")
     else:
         print("Product doesn't exists")
-
+#Sell Function
 def sell_product(product_name, amount):
     if product_name in inventory:
         if amount > 0:
             if inventory[product_name]["stock"] >= amount:
                 inventory[product_name]["stock"] -= amount
-                print("DONE")
+                print(f"SOLD: {amount} Amount of {product_name}")
             else:
-                print("Please enter valid Amount to sell.")
+                print("Not enough stock.")
         else:
             print("Please enter valid amount number.")
     else:
         print("Product doesn't exists")
 
+#Total Inventory Value Function
+def total_inventory_value():
+    total = 0
+    for value in inventory.values():
+        total += value["price"] * value["stock"]
+    return total
 
 #Prints inventory Values
 for product, info in inventory.items():
@@ -48,6 +54,12 @@ if product == "Product not found":
 else:
     print(f"Price: {product['price']}\nStock: {product['stock']}")
 
+lowest_stock = inventory["apple"]["stock"]
+lowest_stock_name = "apple"
+for name, stock in inventory.items():
+    print(stock["stock"])
+    if stock["stock"] < lowest_stock:
+        lowest_stock = stock["stock"]
+        lowest_stock_name = name
 
-sell_product("apple", 100)
-print(inventory["apple"])
+print(f"{lowest_stock_name} has the lowest stock with: {lowest_stock}")
