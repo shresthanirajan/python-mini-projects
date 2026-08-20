@@ -1,45 +1,36 @@
-user_input = input("What is your numbers:").split()
+contacts = {
+    "alex": "817-555-1111",
+    "maya": "682-555-2222"
+}
 
-number_list = []
-
-for nums in user_input:
-    number_list.append(int(nums))
-
-print(number_list)
-
-maximum = number_list[0]
-for nums in number_list:
-    if nums > maximum:
-        maximum = nums
-print(maximum)
-
-minium = number_list[0]
-for nums in number_list:
-    if nums < minium:
-        minium = nums
-print(minium)
-
-even = 0
-odd = 0
-for nums in number_list:
-    if nums % 2 ==0:
-        even += 1
+def find_contact(name):
+    if name.lower() in contacts:
+        return contacts[name.lower()]
     else:
-        odd += 1
-print(f"Even: {even}")
-print(f"Odd: {odd}")
+        return None
 
-is_duplicate = False
-if len(number_list) != (len(set(number_list))):
-    is_duplicate = True
-print(f"Duplicate: {is_duplicate}")
-highest_count = 0
-highest_char = ""
-user_dic = {"a": 3, "b": 1, "c": 2}
-for char, num in user_dic.items():
-    if num > highest_count:
-        highest_count =num
-        highest_char = char
+def delete_contact(name):
+    if name in contacts:
+        contacts.pop(name)
+    else:
+        print("Contact Not Found")
 
-print(highest_count)
-print(highest_char)
+def search_contacts(search_term):
+    for name in contacts:
+        if search_term in name:
+            print(f"{name} Found")
+    else:
+        print("Not Found")
+
+contacts["sam"] = "469-555-3333"
+contacts["alex"] = "817-556-1125"
+for name, number in contacts.items():
+    print(name, number)
+
+phone_number = find_contact("alexander")
+print(phone_number)
+
+
+search_contacts("alexa")
+
+
