@@ -1,5 +1,3 @@
-from ctypes import c_char
-
 user_word = input("What is your word: ").lower().replace(" ","")
 
 user_dic = {}
@@ -38,7 +36,7 @@ for char, count in user_dic.items():
         print(f"{char}: {count}")
 
 
-
 #unique characters
 unique_characters = len(user_dic)
 print(unique_characters)
+
