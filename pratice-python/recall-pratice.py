@@ -1,5 +1,5 @@
 contacts = {
-    "alex": "817-555-1111",
+    "alexander": "817-555-1111",
     "maya": "682-555-2222"
 }
 
@@ -10,8 +10,8 @@ inventory = {
 }
 
 def find_contact(name):
-  if name in contacts:
-    return contacts[name]
+  if name.lower() in contacts:
+    return contacts[name.lower()]
   else:
     return None
 
@@ -24,7 +24,7 @@ def delete_contact(name):
 
 def search_contacts(search_term):
     for name in contacts:
-      if name in search_term:
+      if search_term in name:
         print("Found")
         return
     else:
@@ -40,17 +40,22 @@ for name, number in contacts.items():
 
 
 lowest_stock = inventory["apple"]["stock"]
+product_name = ""
 for name, number in inventory.items():
   if number["stock"] < lowest_stock:
     lowest_stock = number["stock"]
-  
+    product_name = name
    
-print(lowest_stock)
+print(product_name,lowest_stock)
+
+seen = []
+
+numbers = [4, 8, 2, 10, 7, 15, 4, 8]
+for x in numbers:
+    if x in seen:
+        print(x)
+    else:
+        seen.append(x)
 
 
-numbers = [4, 8, 2, 10, 7, 15]
-is_duplicate = False
-if len(numbers) != len(set(numbers)):
-  is_duplicate = True
-print(is_duplicate)
-
+search_contacts("alex")
