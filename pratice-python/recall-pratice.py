@@ -1,104 +1,83 @@
-# contacts = {
-#     "alexander": "817-555-1111",
-#     "maya": "682-555-2222"
-# }
-
-# inventory = {
-#     "apple": {"price": 1.50, "stock": 10},
-#     "banana": {"price": 0.75, "stock": 4},
-#     "orange": {"price": 1.25, "stock": 8}
-# }
-
-# def find_contact(name):
-#   if name.lower() in contacts:
-#     return contacts[name.lower()]
-#   else:
-#     return None
-
-# def delete_contact(name):
-#   if name in contacts:
-#     contacts.pop(name)
-#     print(f"{name} sucessfully removed!")
-#   else:
-#     print("No user Found")
-
-# def search_contacts(search_term):
-#     for name in contacts:
-#       if search_term in name:
-#         print("Found")
-#         return
-#     else:
-#       print("Not found")
-       
-
-
-# contacts["sam"] = "469-555-3333"
-# contacts["alex"] = "817-556-1231"
-
-# for name, number in contacts.items():
-#   print(name, number)
-
-
-# lowest_stock = inventory["apple"]["stock"]
-# product_name = ""
-# for name, number in inventory.items():
-#   if number["stock"] < lowest_stock:
-#     lowest_stock = number["stock"]
-#     product_name = name
-   
-# print(product_name,lowest_stock)
-
-# seen = []
-
-# numbers = [4, 8, 2, 10, 7, 15, 4, 8]
-# for x in numbers:
-#     if x in seen:
-#         print(x)
-#     else:
-#         seen.append(x)
-
-
-# search_contacts("alex")
-
-
-
-
-# words = ["cat", "dog", "bird", "cat", "dog"]
-
-# seen = set()
-# duplicates = set()
-
-# for word in words:
-#   if word in seen:
-#     duplicates.add(word)
-#   else:
-#     seen.add(word)
-
-# print(duplicates)
-
-
 seen = set()
-duplicate = set()
-numbers = [2, 5, 7, 2, 9, 5]
+duplicates = set()
+
+numbers = [3, 7, 3, 9, 7, 12, 3]
+
 for nums in numbers:
   if nums in seen:
-    duplicate.add(nums)
+    duplicates.add(nums)
   else:
     seen.add(nums)
 
-print(seen)
-print(duplicate)
 
+
+
+words = ["cat", "dog", "cat", "bird", "dog", "fish", "cat"]
 
 seen = set()
-duplicate = set()
-letters = "banana"
+duplicates = set()
 
-for char in letters:
-  if char in seen:
-    duplicate.add(char)
+for word in words:
+  if word in seen:
+    duplicates.add(word)
   else:
-    seen.add(char)
+    seen.add(word)
 
-print(seen)
-print(duplicate)
+
+contacts = {
+    "alex": "111",
+    "maya": "222"
+}
+
+
+contacts["sam"] = "333"
+contacts["alex"] = 999
+
+print(contacts)
+
+# Items gives the Key and Value
+# Values Gives the value itself
+# keys Gives the key itself
+
+
+
+
+tasks = [
+    {"task": "study python", "done": False},
+    {"task": "finish homework", "done": False},
+    {"task": "go to gym", "done": True}
+]
+
+def complete_task(task_number):
+  index = task_number - 1
+  tasks[index]["done"] = True
+
+
+not_completed = 0
+task_done = ""
+for task in tasks:
+  if task["done"] == False:
+    not_completed += 1
+    task_done = (task["task"])
+    
+
+complete_task(2)
+
+
+inventory = {
+    "apple": {"price": 1.50, "stock": 10},
+    "banana": {"price": 0.75, "stock": 4},
+    "orange": {"price": 1.25, "stock": 8}
+}
+
+
+lowest_name = 0
+lowest_stock = inventory["apple"]["stock"]
+
+for name, stock in inventory.items():
+  if stock["stock"] < lowest_stock:
+    lowest_stock = stock["stock"]
+    lowest_name = name
+print(lowest_stock)
+print(lowest_name)
+  
