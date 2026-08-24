@@ -22,7 +22,7 @@ def total_expenses():
 
   highest_expenses_name = expenses[0]["name"]
   lowest_expenses_name = expenses[0]["name"]
-  
+  average = 0 
   for expense in expenses:
     total += expense['amount']
     if expense['amount'] > highest_amount:
@@ -35,6 +35,8 @@ def total_expenses():
 
 total_spend, highest_amount, highest_expenses_name, lowest_amount, lowest_expenses_name = total_expenses()
 
-print(highest_expenses_name, highest_amount)
-print(lowest_expenses_name, lowest_amount)
+# print(highest_expenses_name, highest_amount)
+# print(lowest_expenses_name, lowest_amount)
 
+for expense in expenses:
+  print(len(expenses))
