@@ -37,7 +37,11 @@ def update_expense(name, new_amount):
       return
   else:
     print("Not Found!")
-    
+
+def expenses_in_range(min_amount, max_amount):
+  for amount in expenses:
+    if amount["amount"] >= min_amount and amount["amount"] <= max_amount:
+      print(f"{amount['name']} - {amount['amount']}")
   
 
 def total_expenses():
@@ -79,3 +83,4 @@ remove_expense("food")
 
 update_expense("coffee", 500)
 show_expenses()
+expenses_in_range(1,30)
