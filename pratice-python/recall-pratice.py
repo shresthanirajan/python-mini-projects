@@ -113,5 +113,5 @@ for num in numbers:
   else:
     seen.add(num)
 duplicate_count = len(duplicates)
-print(repeated_occurrences)
+print(duplicate_count)
 print(duplicates)
