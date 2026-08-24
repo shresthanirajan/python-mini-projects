@@ -15,6 +15,17 @@ tasks = [
     {"task": "finish homework", "done": True}
 ]
 
+def search_tasks(search_term):
+  found = False
+  for task in tasks:
+    if search_tasks.lower() in task["task"].lower():
+      print(task["task"])
+      found = True
+    if not found: 
+      print("Not Found!")
+search_tasks("homework")
+
+
 tasks.append({
   "task":"go to gym",
   "done": False
