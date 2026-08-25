@@ -44,4 +44,20 @@ def search_tasks(search_term):
     print("Not Found!")
 
 
-search_tasks("gym")
+search_tasks("PYTHON")
+
+
+expenses = [
+    {"name": "food", "amount": 25},
+    {"name": "gas", "amount": 40},
+    {"name": "coffee", "amount": 6}
+]
+
+def remove_expense(expense_number):
+  for index, expense in enumerate(expenses):
+    index += 1
+    expenses.pop(expense_number-1)
+    return
+
+remove_expense(1)
+print(expenses)
