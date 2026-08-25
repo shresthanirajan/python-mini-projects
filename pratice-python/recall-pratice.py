@@ -86,7 +86,7 @@ inventory = {
     "monitor": {"stock": 6}
 }
 lowest_stock = inventory["keyboard"]["stock"]
-lowest_name = ""
+lowest_name = "keyboard"
 for name, stock in inventory.items():
   if lowest_stock > stock["stock"]:
     lowest_stock = stock["stock"]
@@ -136,7 +136,17 @@ def available_products(max_price):
     
   if not found:
     print("No Products Found")
-  
 
 available_products(3)
 
+#Drill 2 #It will print Inside Function first since we are still caliing then what ever value that it returns here for example
+#we return Alex is stored inside Result and that result will print Alex
+
+#Second Casw will Return the print function and return Alex wont work and it will be stored inside result and it will print Inside Function
+def get_name():
+    return print("Inside function")
+    return "Alex"
+
+result = get_name()
+
+print(result)
