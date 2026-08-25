@@ -1,4 +1,56 @@
-numbers = [5, 8, 5, 2, 8, 8, 10, 2, 14, 14, 14]
+expenses = [
+    {"name": "food", "amount": 25},
+    {"name": "gas", "amount": 40},
+    {"name": "coffee", "amount": 6}
+]
+
+def expenses_in_range(min_amount, max_amount):
+  if min_amount < 0 or 0 > max_amount:
+    print("Amounts cannot be negative ")
+    return
+  if min_amount > max_amount:
+    print("Invalid Range")
+    return
+
+  for expense in expenses:
+    if max_amount >= expense["amount"] >= min_amount:
+      print(expense["amount"])
+expenses_in_range(39,40)
+
+#2
+tasks = [
+    {"task": "study python", "done": False}
+]
+
+def add_task(task_name):
+  tasks.append({
+    "task": task_name,
+    "done": False
+  })
+add_task("Working out")
+print(tasks)
+#3
+
+tasks = [
+    {"task": "Study Python", "done": False},
+    {"task": "Python LeetCode", "done": True},
+    {"task": "Calculus Homework", "done": False}
+]
+
+def search_tasks(search_term):
+  found = False
+  for task in tasks:
+    if search_term.lower() in task["task"].lower():
+      print(task["task"])
+      found = True
+  if not found:
+    print("Not Found Task!")
+    return
+
+search_tasks("Homework")
+
+#4
+numbers = [2, 4, 7, 2, 9, 4, 4, 10, 7]
 seen = set()
 duplicates = set()
 for num in numbers:
@@ -6,139 +58,85 @@ for num in numbers:
     duplicates.add(num)
   else:
     seen.add(num)
-
-print(f"Duplicates: {duplicates}")
-print(f"Number of unique duplicates: {len(duplicates)}")
-
-tasks = [
-    {"task": "study python", "done": False},
-    {"task": "finish calculus", "done": True}
-]
-
-# def add_task(task_name):
-#   tasks({
-#     "task": task_name
-
-#   })
+print(f"seen: {seen}")
+print(f"duplicates: {duplicates}")
+unique_duplicates = len(duplicates)
+print(unique_duplicates)
 
 
-# add_task("go to gym")
-# print(tasks)
-
-
-tasks = [
-    {"task": "study python", "done": False},
-    {"task": "python leetcode practice", "done": False},
-    {"task": "finish calculus homework", "done": True},
-    {"task": "go to gym", "done": True}
-]
-
-
-def search_tasks(search_term):
-  found = False
-  for task in tasks:
-    if search_term.lower() in task["task"].lower():
-      found = True
-      print(f"{task["task"]} was found") 
-  if not found:
-    print("Not Found!")
-
-
-search_tasks("PYTHON")
-
-
+#5
 expenses = [
     {"name": "food", "amount": 25},
-    {"name": "gas", "amount": 40},
-    {"name": "coffee", "amount": 6}
-]
-
-def remove_expense(expense_number):
-  for index, expense in enumerate(expenses):
-    index += 1
-    expenses.pop(expense_number-1)
-    return
-
-def expenses_in_range(min_amount, max_amount):
-  for expense in expenses:
-    if min_amount >= 0 or max_amount <= 0:
-      if min_amount > max_amount:
-        print("Invalid range")
-        return
-      else:
-        if min_amount <= expense["amount"] <= max_amount:
-          print(expense)
-    else:
-      print("Amounts cannot be negative")
-      return
-
-# remove_expense(2)
-# print(expenses)
-expenses_in_range(7,25)
-
-
-print(" ")
-inventory = {
-    "keyboard": {"price": 70, "stock": 12},
-    "mouse": {"price": 30, "stock": 4},
-    "monitor": {"price": 220, "stock": 7},
-    "headphones": {"price": 90, "stock": 2}
-}
-
-lowest_stock = inventory["keyboard"]["price"]
-lowest_stock_name = ''
-
-for name, item in inventory.items():
-  if item["stock"] < lowest_stock:
-    lowest_stock = item["stock"]
-    lowest_stock_name = name
-
-
-print(f"Lowest stock product: {lowest_stock_name}")
-print(f"Stock: {lowest_stock}")
-
-
-expenses = [
     {"name": "rent", "amount": 900},
-    {"name": "food", "amount": 200},
-    {"name": "gas", "amount": 100}
+    {"name": "gas", "amount": 40}
 ]
 
-higest_amount = expenses[0]["amount"]
-higest_expense = expenses[0]["name"]
+highest_amount = expenses[0]["amount"]
+highest_name = expenses[0]["name"]
+for expense in expenses:
+  if highest_amount < expense["amount"]:
+    highest_amount = expense["amount"]
+    highest_name = expense["name"]
+print(highest_name,highest_amount)
+
+#6
+inventory = {
+    "keyboard": {"stock": 8},
+    "mouse": {"stock": 3},
+    "monitor": {"stock": 6}
+}
+lowest_stock = inventory["keyboard"]["stock"]
+lowest_name = ""
+for name, stock in inventory.items():
+  if lowest_stock > stock["stock"]:
+    lowest_stock = stock["stock"]
+    lowest_name = name
+print(lowest_name)
+print(lowest_stock)
+
+#7 GETs 10 as the output because We are returning that then we are storing that value into results
 
 
-for amount in expenses:
-  if higest_amount < amount["amount"]:
-    higest_amount = amount["amount"]
-    higest_expense = amount["name"]
-    
-    
-                      
+#8 It because first it finds the name alex for example then straighjt returns it without prining  the other alexander
+def search_names(search_term):
+    names = ["alex", "alexander", "maya"]
+    for name in names:
+        if search_term in name:
+            print(name)
+            
 
-print(higest_amount) 
-print(higest_expense)
+search_names("alex")
 
-#9 Should Print nothing 
+#9
 
-expenses = [
-    {"name": "food", "amount": 25},
-    {"name": "gas", "amount": 40},
-    {"name": "coffee", "amount": 6},
-    {"name": "books", "amount": 40}
+students = [
+    {"name": "Alex", "grades": [80, 90, 70]},
+    {"name": "Maya", "grades": [95, 88, 92]}
 ]
 
-def find_expenses_over(limit):
-  if limit > 0:
-    found = False
-    for expense in expenses:
-      if expense["amount"] > limit:
-        print(expense["amount"])
-        found = True
-      if not found:
-        print("No expenses Found")
-        return
-  else:
-    print("limit cannot be negative")
+print(students[1]["grades"][1])
 
-find_expenses_over(2)
+#10
+products = [
+    {"name": "apple", "price": 2, "stock": 10},
+    {"name": "banana", "price": 1, "stock": 0},
+    {"name": "orange", "price": 3, "stock": 5}
+]
+
+def available_products(max_price):
+  if max_price < 0:
+    print("No Negative Values")
+    return
+  found = False
+  for product in products:
+    if product["stock"] > 0:
+      if max_price >= product["price"]:
+            print(f"{product['name']}: ${product['price']}")     
+            found = True
+    
+  if not found:
+    print("No Products Found")
+  
+
+available_products(3)
+
