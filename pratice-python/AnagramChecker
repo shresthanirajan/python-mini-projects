@@ -1,0 +1,29 @@
+def are_anagrams(word1, word2):
+  clean_word1 = word1.lower().replace(" ", "")
+  clean_word2 = word2.lower().replace(" ", "")
+  if len(clean_word1) != len(clean_word2):
+    print("Anagram word Must have same Length Value")
+    return False
+  count1 = {}
+  count2 = {}
+
+  #Checks First Word
+  for char in clean_word1:
+    if char in count1:
+      count1[char] += 1
+    else:
+      count1[char] = 1
+  #Checks Second Word
+  for char in clean_word2:
+    if char in count2:
+      count2[char] += 1
+    else:
+      count2[char] = 1
+  if count1 == count2:
+    return True
+  else:
+    return False
+  
+apple = are_anagrams("silentsa", "liastensaaaa")
+print(apple)
+
