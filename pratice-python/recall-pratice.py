@@ -25,5 +25,6 @@ def unique_character():
 test = unique_character()
 print(test)
 print(unique_character)
+print(unique_character)
 
 
