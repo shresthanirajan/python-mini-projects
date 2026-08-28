@@ -117,23 +117,34 @@
 # print(checkl)
 
 
-def is_palindrome(text):
-  text = text.lower()
-  cleaned = ""
-  for char in text:
-    if char.isalnum():
-      cleaned += char
-  print(cleaned)
+# def is_palindrome(text):
+#   text = text.lower()
+#   cleaned = ""
+#   for char in text:
+#     if char.isalnum():
+#       cleaned += char
+#   print(cleaned)
 
-  left = 0
-  right = len(cleaned) -1
-  while left < right:
-    if cleaned[left] == cleaned[right]:
-      left += 1
-      right -= 1
-    else:
-      return False
-  return True
+#   left = 0
+#   right = len(cleaned) -1
+#   while left < right:
+#     if cleaned[left] == cleaned[right]:
+#       left += 1
+#       right -= 1
+#     else:
+#       return False
+#   return True
 
-check1 = is_palindrome("levell")
+# check1 = is_palindrome("levell")
 
+nums = [2, 7, 11, 15]
+target = 9
+seen = {}
+
+for index, num in enumerate(nums):
+  complement = target - num
+
+  if complement in seen:
+    pass
+  seen[num] = index
+  
