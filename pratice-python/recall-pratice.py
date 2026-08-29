@@ -148,3 +148,4 @@ for index, num in enumerate(nums):
     pass
   seen[num] = index
 print(seen)
+print(target)
