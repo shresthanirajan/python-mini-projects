@@ -147,4 +147,4 @@ for index, num in enumerate(nums):
   if complement in seen:
     pass
   seen[num] = index
-  
+print(seen)
