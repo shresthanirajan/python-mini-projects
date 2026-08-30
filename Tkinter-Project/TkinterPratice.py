@@ -10,3 +10,5 @@ window.mainloop()
 
 window.mainloop()
 window.mainloop()
+window.mainloop()
+window.mainloop()
