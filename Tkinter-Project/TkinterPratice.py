@@ -13,3 +13,4 @@ window.mainloop()
 
 
 print
+print("hello")
