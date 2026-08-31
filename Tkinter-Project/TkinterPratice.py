@@ -8,3 +8,8 @@ label.pack()
 window.mainloop()
 
 
+
+
+
+
+print
