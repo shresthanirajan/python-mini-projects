@@ -102,3 +102,5 @@ equal_button.grid(
 )
 
 window.mainloop()
+
+print("window")
