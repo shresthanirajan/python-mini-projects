@@ -211,3 +211,5 @@ equal_button.grid(
 window.mainloop()
 
 print("window")
+
+print("fixed issues ")
