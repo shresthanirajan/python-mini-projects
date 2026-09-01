@@ -1,151 +1,90 @@
-# #1
-# text = "banana"
-# text_dictinoary = {}
-# for char in text:
-#   if char in text_dictinoary:
-#     text_dictinoary[char] += 1
-#   else:
-#     text_dictinoary[char] = 1
-# print(text_dictinoary)
+#1
+text = "mississippi"
+text_dictinoary = {}
+for char in text:
+  if char in text_dictinoary:
+    text_dictinoary[char] += 1
+  else:
+    text_dictinoary[char] = 1
+print(text_dictinoary)
 
-# #2
-# text = "aabbcddee"
-# text_dictinoary = {}
-# for char in text:
-#   if char in text_dictinoary:
-#     text_dictinoary[char] += 1
-#   else:
-#     text_dictinoary[char] = 1
+#2
+text = "aabbcdd"
+text_dictinoary = {}
+for char in text:
+  if char in text_dictinoary:
+    text_dictinoary[char] += 1
+  else:
+    text_dictinoary[char] = 1
 
-# for char in text:
-#   if text_dictinoary[char] == 1:
-#     print(char)
-#     break
 
-# #3
-# text = "aabbccd"
-# text_dictinoary = {}
-# for char in text:
-#   if char in text_dictinoary:
-#     text_dictinoary[char] += 1
-#   else:
-#     text_dictinoary[char] = 1
+for char, value in text_dictinoary.items():
+  if value <= 1:
+    print(char)
+    break
 
-# for index, char in enumerate(text):
-#   if text_dictinoary[char] == 1:
-#     print(index)
-#     break 
+3
+text = "aabccd"
+text_dictinoary = {}
+for char in text:
+  if char in text_dictinoary:
+    text_dictinoary[char] += 1
+  else:
+    text_dictinoary[char] = 1
+print(text_dictinoary)
 
-# #4
-# text = "level"
+for index, char in enumerate(text_dictinoary):
+  if text_dictinoary[char] <= 1:
+    print(index)
+    break
 
-# left = 0
-# right = len(text) -1
-# is_panedolium = True
-# while left < right:
-#   if text[left] == text[right]:
-#     left += 1
-#     right -= 1
-#   else:
-#      is_panedolium = False
-#      break
+4
+text = "racecar"
+left = 0
+right = len(text) - 1
+print(right)
+is_palindrome = True
+
+while left < right:
+  if text[left] == text[right]:
+    left += 1
+    right -= 1
+  else:
+    is_palindrome = False
+    break
+
+
+print(is_palindrome)
+
+#5
+tasks = [
+    {"task": "study", "done": False},
+    {"task": "gym", "done": True}
+]
+
+print(tasks[1]["task"])
+tasks[1]["done"] = False
+print(tasks)
+
+#6
+def check_score(score):
+  if score < 0:
+    return "Invalid"
+  if score > 100:
+    return "Invalid"
+  return "Valid"
+
+check = check_score(101)
+print(check)
+
+#7 6 is the complement
+
+#8 that seen is a dictionary and holds the value and the index, seen[8] means the number returns the index
+
+
   
-    
-# print(is_panedolium) 
 
-
-# #5 
-
-# #Text[left] means the variable text starting from the left index of 0 
-# #text[right] means the variable text starting all the way at the end of the text variable index
-# #left += 1 means moving forward in the text 
-    
-
-# #6
-# def return_placement():
-#   for i, char in enumerate(text):
-#     if counts[char] == 1:
-#         return i
-#   else:
-#       return None
-
-# # 7. 
-# tasks = [
-#     {"task": "study python", "done": False}
-# ]
-
-# tasks.append({
-#   "task": "go to gym",
-#   "done": False
-# })
-# print(tasks)
-
-# #8
-
-# def check_age(age):
-#    if age <= 0:
-#       print("Invalid age")
-#       return
-#    if age > 120:
-#       print("Invalid age")
-#       return
-#    print("Valid Age")
-
-# check_age(1)
-
-# def isPalindrome(s):
-#         s = s.lower()
-#         cleaned = ""
-#         for char in s:
-#             if char.isalnum():
-#                 cleaned += char
-#         print(f"CLEANED HERE: {cleaned}")
-#         left = 0
-#         right = len(cleaned) -1
-#         is_palindorme = True
-#         while left < right:
-#             if cleaned[left] == cleaned[right]:
-#                 left += 1
-#                 right -= 1
-            
-#             else:
-#                 is_palindorme = False
-#                 return is_palindorme
-#         return True
-
-# checkl = isPalindrome("level, level")
-# print(checkl)
-
-
-# def is_palindrome(text):
-#   text = text.lower()
-#   cleaned = ""
-#   for char in text:
-#     if char.isalnum():
-#       cleaned += char
-#   print(cleaned)
-
-#   left = 0
-#   right = len(cleaned) -1
-#   while left < right:
-#     if cleaned[left] == cleaned[right]:
-#       left += 1
-#       right -= 1
-#     else:
-#       return False
-#   return True
-
-# check1 = is_palindrome("levell")
-
-nums = [2, 7, 11, 15]
-target = 9
-seen = {}
-
-for index, num in enumerate(nums):
-  complement = target - num
-
-  if complement in seen:
-    pass
-  seen[num] = index
-print(seen)
-print(target)
+  
+  
+  
+  
