@@ -23,8 +23,8 @@ for char, value in text_dictinoary.items():
     print(char)
     break
 
-3
-text = "aabccd"
+#3
+text = "abbaccd"
 text_dictinoary = {}
 for char in text:
   if char in text_dictinoary:
@@ -33,8 +33,8 @@ for char in text:
     text_dictinoary[char] = 1
 print(text_dictinoary)
 
-for index, char in enumerate(text_dictinoary):
-  if text_dictinoary[char] <= 1:
+for index, char in enumerate(text):
+  if text_dictinoary[char] ==1:
     print(index)
     break
 
