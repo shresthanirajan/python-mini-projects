@@ -37,3 +37,6 @@ print(data_set[
 print(data_set
   [["Model", "training_time"]]
 )
+print(data_set
+  [["training_time", "training_time"]]
+)
