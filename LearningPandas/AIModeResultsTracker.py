@@ -42,3 +42,23 @@ print(data_set
 )
 
 #TODO adding featues into data_set
+print(data_set[
+  data_set["training_time"] < 20]
+  [["Model", "training_time"]]
+)
+print(data_set
+  [["Model", "training_time"]]
+)
+print(data_set
+  [["training_time", "training_time"]]
+)
+print(data_set[
+  data_set["training_time"] < 20]
+  [["Model", "training_time"]]
+)
+print(data_set
+  [["Model", "training_time"]]
+)
+print(data_set
+  [["training_time", "training_time"]]
+)
