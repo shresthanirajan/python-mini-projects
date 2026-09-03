@@ -1,0 +1,7 @@
+model,accuracy,training_time,epochs
+Logistic Regression,0.84,12,10
+Random Forest,0.91,35,20
+Decision Tree,0.79,8,8
+KNN,0.86,15,12
+Neural Network,0.94,55,30
+SVM,0.88,28,15
