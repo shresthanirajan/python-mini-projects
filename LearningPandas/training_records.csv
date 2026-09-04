@@ -1,0 +1,9 @@
+model,dataset,accuracy
+Random Forest,Dataset_A,0.91
+KNN,Dataset_B,0.86
+Decision Tree,Dataset_A,0.79
+Random Forest,Dataset_A,0.91
+SVM,Dataset_C,0.88
+KNN,Dataset_B,0.86
+Neural Network,Dataset_C,0.94
+Logistic Regression,Dataset_A,0.84
