@@ -1,0 +1,5 @@
+model_name,acc,train_time,notes
+Random Forest,0.91,35,good
+KNN,0.86,15,fast
+SVM,0.88,28,stable
+Neural Network,0.94,55,slow

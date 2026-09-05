@@ -1,0 +1,5 @@
+model_name,accuracy,training_time,accuracy_percent
+Neural Network,0.94,55,94.0
+Random Forest,0.91,35,91.0
+SVM,0.88,28,88.0
+KNN,0.86,15,86.0
