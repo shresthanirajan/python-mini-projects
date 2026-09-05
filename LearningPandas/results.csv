@@ -1,0 +1,5 @@
+model_id,accuracy,training_time
+1,0.91,35
+2,0.86,15
+3,0.88,28
+4,0.94,55

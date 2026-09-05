@@ -1,0 +1,5 @@
+model_id,model_name,model_type
+1,Random Forest,Tree
+2,KNN,Distance
+3,SVM,Kernel
+4,Neural Network,Deep Learning
