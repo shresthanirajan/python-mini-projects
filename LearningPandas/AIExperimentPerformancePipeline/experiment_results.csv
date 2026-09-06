@@ -1,0 +1,9 @@
+model_id,dataset,accuracy,training_time
+1,Dataset_A,0.91,35
+2,Dataset_A,0.86,15
+3,Dataset_B,0.88,28
+4,Dataset_B,0.94,55
+5,Dataset_C,0.92,40
+6,Dataset_C,,12
+4,Dataset_B,0.94,55
+7,Dataset_A,0.81,20
