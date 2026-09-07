@@ -15,6 +15,6 @@ print(df_models)
 
 
 
-print(df_results.duplicated().sum())
+
 
 
