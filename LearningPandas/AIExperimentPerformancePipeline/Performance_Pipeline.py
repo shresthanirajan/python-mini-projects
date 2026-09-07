@@ -11,5 +11,10 @@ print(df_results)
 
 print(df_results.duplicated().sum())
 
+print(df_models)
+
+print(df_results)
+
+print(df_results.duplicated().sum())
 
 
