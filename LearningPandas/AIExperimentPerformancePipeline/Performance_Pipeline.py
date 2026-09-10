@@ -19,3 +19,10 @@ print(df_results)
 df_results["accuracy"] = df_results["accuracy"].fillna(
   df_results["accuracy"].mean()
 )
+
+#6
+df_merged = pd.merge(df_models, df_results, on="model_id")
+print(df_merged)
+
+#7
+
