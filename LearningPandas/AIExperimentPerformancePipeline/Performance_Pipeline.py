@@ -31,5 +31,9 @@ print(df_merged["model_name".isna()])
 print(df_merged["model_name".isna()])
 
 
+df_merged = pd.merge(df_results, df_models, on="model_id", how="left")
+print(df_merged["model_name".isna()])
+print(df_merged["model_name".isna()])
+
 
 
