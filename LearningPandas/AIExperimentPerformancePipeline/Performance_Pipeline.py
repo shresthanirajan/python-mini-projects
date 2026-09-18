@@ -33,6 +33,8 @@ print(df_merged["model_name".isna()])
 print(df_merged["model_name".isna()])
 print(df_merged["model_name".isna()])
 
+print(df_merged["model_name".isna()])
+
 
 
 
