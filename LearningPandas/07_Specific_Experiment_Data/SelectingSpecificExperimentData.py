@@ -29,3 +29,16 @@ print(df.loc[
 print(df.iloc[
   0:3, 0:1
 ])
+
+
+print(df.iloc[
+  0:3, 0:1
+])
+
+print(df.iloc[
+  0:3, 0:1
+])
+
+print(df.iloc[
+  0:3, 0:1
+])
