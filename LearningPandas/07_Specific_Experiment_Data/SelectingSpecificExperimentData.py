@@ -31,7 +31,4 @@ print(df.iloc[
 ])
 
 
-print(df.iloc[
-  0:3, 0:1
-])
 
