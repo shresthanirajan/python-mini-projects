@@ -58,9 +58,6 @@ print(df[
 ]["accuracy"].mean())
 
 
-print(df[
-  df["training_time"] < 30
-]["accuracy"].mean())
 
 
 
