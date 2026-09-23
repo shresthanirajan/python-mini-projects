@@ -44,7 +44,6 @@ print(df[["model", "dataset", "accuracy"]])
 print(df[["model", "dataset", "accuracy"]])
 
 
-print(df[["model", "dataset", "accuracy"]])
 
 
 
