@@ -35,6 +35,19 @@ print(df[
 
 
 
+print(df[["model", "dataset", "accuracy"]])
+
+
+print(df[["model", "dataset", "accuracy"]])
+
+
+print(df[["model", "dataset", "accuracy"]])
+
+
+print(df[["model", "dataset", "accuracy"]])
+
+
+print(df[["model", "dataset", "accuracy"]])
 
 
 
