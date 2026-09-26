@@ -56,23 +56,23 @@ print(data_set[
 ]
 )
 #3 
-# print(data_set[
-#   (data_set["accuracy"] >= 0.80) & (data_set["training_time"] < 15)
-# ]
-# [["Model"]]
-# )
+print(data_set[
+  (data_set["accuracy"] >= 0.80) & (data_set["training_time"] < 15)
+]
+[["Model"]]
+)
 
-# #4
-# print(data_set[
-#   (data_set["accuracy"] > 0.90) | (data_set["training_time"] <= 8)
-# ]
-# [["Model"]])
+#4
+print(data_set[
+  (data_set["accuracy"] > 0.90) | (data_set["training_time"] <= 8)
+]
+[["Model"]])
 
-# #5
-# print(data_set[
-#   data_set["training_time"] > 10 
-# ]
-# [["Model"]])
+#5
+print(data_set[
+  data_set["training_time"] > 10 
+]
+[["Model"]])
 
 # print(data_set[
 #   (data_set["accuracy"] >= 0.80) & (data_set["accuracy"] <= 0.90)
