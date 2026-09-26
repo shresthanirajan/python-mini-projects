@@ -119,60 +119,60 @@ print(data_set[
 
 data_set["performance_score"] = data_set["accuracy"] * 100 - data_set["training_time"]
 
-# print(data_set[
-#   data_set["performance_score"] > 60
-# ]
-# [["Model"]])
+print(data_set[
+  data_set["performance_score"] > 60
+]
+[["Model"]])
                
-#print(data_set)
+print(data_set)
 
-# print(data_set[
-#   (data_set["accuracy"] >= 0.85) & (data_set["performance_score"] > 50)
-# ]
-# [["Model", "accuracy", "performance_score"]])
+print(data_set[
+  (data_set["accuracy"] >= 0.85) & (data_set["performance_score"] > 50)
+]
+[["Model", "accuracy", "performance_score"]])
 
-# print(data_set.sort_values(by="accuracy", ascending=False))
+print(data_set.sort_values(by="accuracy", ascending=False))
 
-# print(data_set.sort_values(by="training_time") [["Model", "training_time"]])
+print(data_set.sort_values(by="training_time") [["Model", "training_time"]])
 
-# print(data_set.sort_values(by="accuracy", ascending=False)[["Model", "accuracy"]])
+print(data_set.sort_values(by="accuracy", ascending=False)[["Model", "accuracy"]])
 
-# print(data_set[
-#   data_set["accuracy"] >= 0.85
-# ].sort_values(by="performance_score", ascending=False)
-# [["Model"]])
-
-
-# print(data_set[
-#   data_set["training_time"] < 40
-# ].sort_values(by="training_time")
-# [["Model", "training_time"]])
+print(data_set[
+  data_set["accuracy"] >= 0.85
+].sort_values(by="performance_score", ascending=False)
+[["Model"]])
 
 
-# print(data_set["accuracy"].mean())
-# print(data_set["accuracy"].max())
-
-# print(data_set["training_time"].min())
-# print(data_set["training_time"].sum())
-# print(data_set["Model"].count())
-
-# print(data_set[
-#   data_set["accuracy"] > 0.85
-# ]["training_time"].mean()
-# )
-
-# print(data_set[
-#   data_set["training_time"] < 40
-# ]["performance_score"].max())
+print(data_set[
+  data_set["training_time"] < 40
+].sort_values(by="training_time")
+[["Model", "training_time"]])
 
 
-# print(data_set[
-#   data_set["performance_score"] > 50
-# ]["accuracy"].mean())
+print(data_set["accuracy"].mean())
+print(data_set["accuracy"].max())
 
-# print(data_set[
-#   data_set["accuracy"] < 0.90
-# ]["training_time"].max())
+print(data_set["training_time"].min())
+print(data_set["training_time"].sum())
+print(data_set["Model"].count())
+
+print(data_set[
+  data_set["accuracy"] > 0.85
+]["training_time"].mean()
+)
+
+print(data_set[
+  data_set["training_time"] < 40
+]["performance_score"].max())
+
+
+print(data_set[
+  data_set["performance_score"] > 50
+]["accuracy"].mean())
+
+print(data_set[
+  data_set["accuracy"] < 0.90
+]["training_time"].max())
 
 print(
   new_df[
