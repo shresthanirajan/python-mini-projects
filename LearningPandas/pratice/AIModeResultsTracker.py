@@ -74,48 +74,48 @@ print(data_set[
 ]
 [["Model"]])
 
-# print(data_set[
-#   (data_set["accuracy"] >= 0.80) & (data_set["accuracy"] <= 0.90)
-# ])
+print(data_set[
+  (data_set["accuracy"] >= 0.80) & (data_set["accuracy"] <= 0.90)
+])
 
-# print(data_set[
-#   data_set["training_time"] < 20
+print(data_set[
+  data_set["training_time"] < 20
 
-# ]
-# [["Model", "accuracy"]])
+]
+[["Model", "accuracy"]])
 
-# print(data_set[
-#   (data_set["accuracy"] >= 0.8) & (data_set["training_time"] <= 15)
-# ]
-# [["Model"]])
+print(data_set[
+  (data_set["accuracy"] >= 0.8) & (data_set["training_time"] <= 15)
+]
+[["Model"]])
 
-#Adding and Updating
+Adding and Updating
 
-# print(data_set)
+print(data_set)
 
 
-# data_set["accuracy_percent"] = data_set["accuracy"] * 100
+data_set["accuracy_percent"] = data_set["accuracy"] * 100
 
-# data_set["training_time"] = data_set["training_time"] * 2
+data_set["training_time"] = data_set["training_time"] * 2
 
-# data_set["efficient"] = (data_set["accuracy"] > 0.85) & (data_set["training_time"] < 40)
+data_set["efficient"] = (data_set["accuracy"] > 0.85) & (data_set["training_time"] < 40)
 
-# data_set["accuracy_gap"] = 1- data_set["accuracy"]
+data_set["accuracy_gap"] = 1- data_set["accuracy"]
 
-# data_set["fast_model"] = data_set["training_time"] <= 30
+data_set["fast_model"] = data_set["training_time"] <= 30
 
-# print(
-# data_set[
-#   data_set["fast_model"] == True
-# ]
-# [["Model", "training_time", "fast_model"]]
-# )
+print(
+data_set[
+  data_set["fast_model"] == True
+]
+[["Model", "training_time", "fast_model"]]
+)
 
-# data_set["slow_model"] = data_set["training_time"] > 30
-# print(data_set[
-#   data_set["slow_model"] == True
-# ]
-# [["Model", "training_time"]])
+data_set["slow_model"] = data_set["training_time"] > 30
+print(data_set[
+  data_set["slow_model"] == True
+]
+[["Model", "training_time"]])
 
 data_set["performance_score"] = data_set["accuracy"] * 100 - data_set["training_time"]
 
