@@ -9,20 +9,20 @@ new_data = {"Model": ["Claude", "Gemeni", "GPT4", "GPT5", "Antropics"],
 data_set = pd.DataFrame(data)
 new_df = pd.DataFrame(new_data)
 
-# print(data_set)
+print(data_set)
 
-# print(data_set["accuracy"])
+print(data_set["accuracy"])
 
-# print(data_set[["Model", "accuracy"]])
+print(data_set[["Model", "accuracy"]])
 
-# print(data_set["accuracy"] > 0.85)
+print(data_set["accuracy"] > 0.85)
 
-# print(data_set["training_time"] < 20)
+print(data_set["training_time"] < 20)
 
-# print(data_set[
-#   data_set["training_time"] < 20]
-#   [["Model", "accuracy"]]
-# )
+print(data_set[
+  data_set["training_time"] < 20]
+  [["Model", "accuracy"]]
+)
 
 # print(data_set[
 #   (data_set["accuracy"] > 0.85) & (data_set["training_time"] < 20)
