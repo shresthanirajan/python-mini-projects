@@ -24,18 +24,18 @@ print(data_set[
   [["Model", "accuracy"]]
 )
 
-# print(data_set[
-#   (data_set["accuracy"] > 0.85) & (data_set["training_time"] < 20)
-# ])
+print(data_set[
+  (data_set["accuracy"] > 0.85) & (data_set["training_time"] < 20)
+])
 
-# print(data_set[
-#   data_set["accuracy"] > 0.85
-# ]
-# [
+print(data_set[
+  data_set["accuracy"] > 0.85
+]
+[
 
-#   ["Model", "accuracy"]
-# ]
-# )
+  ["Model", "accuracy"]
+]
+)
 
 # #1
 # print(data_set[
